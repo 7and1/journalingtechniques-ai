@@ -11,7 +11,14 @@ const config: OpenNextConfig = {
       queue: 'dummy',
     },
   },
-  edgeExternals: ['node:crypto'],
+  // External packages that use native bindings - not needed on server
+  // (Transformers.js AI runs in browser only)
+  edgeExternals: [
+    'node:crypto',
+    '@xenova/transformers',
+    'onnxruntime-node',
+    'onnxruntime-web',
+  ],
   middleware: {
     external: true,
     override: {
