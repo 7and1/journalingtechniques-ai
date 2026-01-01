@@ -1,0 +1,55 @@
+{
+  "name": "journalingtechniques.ai",
+  "version": "0.1.0",
+  "description": "Private AI Journaling - Your Journal Text Never Leaves Your Browser",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "build:cf": "npx @cloudflare/next-on-pages",
+    "preview:cf": "npm run build:cf && npx wrangler pages dev",
+    "deploy:cf": "npm run build:cf && npx wrangler pages deploy .vercel/output/static --project-name=journalingtechniques-ai",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,mdx}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md,mdx}\"",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@tailwindcss/typography": "^0.5.19",
+    "@xenova/transformers": "^2.17.0",
+    "next": "^15.0.0",
+    "next-mdx-remote": "^5.0.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0"
+  },
+  "devDependencies": {
+    "@cloudflare/next-on-pages": "1.13.16",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^20.14.0",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^5.1.0",
+    "autoprefixer": "^10.4.0",
+    "eslint": "^9.13.0",
+    "eslint-config-next": "^15.0.0",
+    "happy-dom": "^20.0.10",
+    "jsdom": "^27.1.0",
+    "postcss": "^8.4.0",
+    "prettier": "^3.3.0",
+    "prettier-plugin-tailwindcss": "^0.6.0",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.6.0",
+    "vitest": "^4.0.8",
+    "wrangler": "4.54.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

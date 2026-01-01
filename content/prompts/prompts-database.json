@@ -1,0 +1,307 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2025-12-26",
+  "totalPrompts": 20,
+  "categories": {
+    "anxiety": {
+      "name": "Anxiety Relief",
+      "slug": "anxiety",
+      "description": "CBT-inspired prompts to help you notice anxiety patterns, triggers, and coping options.",
+      "icon": "😰",
+      "color": "blue",
+      "promptCount": 10,
+      "seo": {
+        "title": "Anxiety Journal Prompts | CBT-Inspired Techniques",
+        "description": "Journal prompts for anxiety to help you identify triggers, challenge anxious thoughts, and find calmer footing.",
+        "keywords": [
+          "journal prompts for anxiety",
+          "anxiety journaling",
+          "cbt for anxiety",
+          "anxiety relief writing"
+        ]
+      }
+    },
+    "gratitude": {
+      "name": "Gratitude & Positivity",
+      "slug": "gratitude",
+      "description": "Cultivate thankfulness and joy with positive psychology prompts",
+      "icon": "🙏",
+      "color": "yellow",
+      "promptCount": 5,
+      "seo": {
+        "title": "Gratitude Journal Prompts to Transform Your Mindset",
+        "description": "Daily gratitude prompts to help you notice what’s working, savor small wins, and build a consistent practice.",
+        "keywords": [
+          "gratitude journal prompts",
+          "daily gratitude",
+          "thankfulness journal",
+          "positive thinking prompts"
+        ]
+      }
+    },
+    "self-discovery": {
+      "name": "Self-Discovery",
+      "slug": "self-discovery",
+      "description": "Deep prompts for understanding yourself better",
+      "icon": "🌱",
+      "color": "green",
+      "promptCount": 5,
+      "seo": {
+        "title": "Self-Discovery Journal Prompts for Personal Growth",
+        "description": "Powerful questions to explore your values, identity, and direction through honest reflection.",
+        "keywords": [
+          "self discovery journal",
+          "know yourself prompts",
+          "personal growth journaling"
+        ]
+      }
+    }
+  },
+  "prompts": [
+    {
+      "id": "anxiety-001",
+      "text": "What does anxiety feel like in my body right now? Where do I feel tension?",
+      "category": "anxiety",
+      "subcategory": "body-awareness",
+      "difficulty": "easy",
+      "technique": "CBT body scanning",
+      "description": "This prompt helps you identify physical sensations associated with anxiety. Body awareness is the first step in managing anxiety - you can't change what you don't notice.",
+      "tags": ["anxiety", "mindfulness", "cbt", "body-awareness", "beginners"],
+      "relatedPrompts": ["anxiety-002", "anxiety-010"],
+      "aiSuggestion": "After writing, click Get insights for an on-device emotional tone, theme, and reflection question."
+    },
+    {
+      "id": "anxiety-002",
+      "text": "What triggered my anxiety today? What happened right before I started feeling anxious?",
+      "category": "anxiety",
+      "subcategory": "trigger-identification",
+      "difficulty": "easy",
+      "technique": "CBT trigger tracking",
+      "description": "Identifying triggers is crucial for managing anxiety. Most people can't see patterns until they write them down.",
+      "tags": ["anxiety", "triggers", "cbt", "awareness"],
+      "relatedPrompts": ["anxiety-001", "anxiety-003"],
+      "aiSuggestion": "After writing, click Get insights for an on-device emotional tone, theme, and reflection question."
+    },
+    {
+      "id": "anxiety-003",
+      "text": "What's the worst that could happen in this situation? How likely is it actually?",
+      "category": "anxiety",
+      "subcategory": "catastrophic-thinking",
+      "difficulty": "moderate",
+      "technique": "CBT decatastrophizing",
+      "description": "Anxiety makes us overestimate danger. This prompt helps you reality-test your fears.",
+      "tags": ["anxiety", "cbt", "cognitive-distortions", "reality-testing"],
+      "relatedPrompts": ["anxiety-004", "anxiety-012"],
+      "aiSuggestion": "After writing, click Get insights for an on-device emotional tone, theme, and reflection question."
+    },
+    {
+      "id": "anxiety-004",
+      "text": "What evidence do I have that this fear is realistic? What evidence contradicts it?",
+      "category": "anxiety",
+      "subcategory": "evidence-examination",
+      "difficulty": "moderate",
+      "technique": "CBT Socratic questioning",
+      "description": "This classic CBT technique helps you examine anxious thoughts like a detective.",
+      "tags": ["anxiety", "cbt", "evidence", "rational-thinking"],
+      "relatedPrompts": ["anxiety-003", "anxiety-005"],
+      "aiSuggestion": "After writing, click Get insights for an on-device emotional tone, theme, and reflection question."
+    },
+    {
+      "id": "anxiety-005",
+      "text": "If a friend came to me with this exact worry, what would I tell them?",
+      "category": "anxiety",
+      "subcategory": "perspective-taking",
+      "difficulty": "easy",
+      "technique": "Compassionate reframing",
+      "description": "We're kinder to others than ourselves. This prompt leverages that to reduce anxiety.",
+      "tags": ["anxiety", "self-compassion", "perspective", "reframing"],
+      "relatedPrompts": ["anxiety-006", "anxiety-015"],
+      "aiSuggestion": "After writing, click Get insights for an on-device emotional tone, theme, and reflection question."
+    },
+    {
+      "id": "gratitude-001",
+      "text": "What's one small thing that made me smile today?",
+      "category": "gratitude",
+      "subcategory": "daily",
+      "difficulty": "easy",
+      "technique": "Micro-gratitude",
+      "description": "Starting with tiny moments makes gratitude practice sustainable. Big things are easy to forget; small moments stick.",
+      "tags": ["gratitude", "daily", "happiness", "beginners"],
+      "relatedPrompts": ["gratitude-002", "gratitude-003"],
+      "aiSuggestion": "After writing, click Get insights for an on-device emotional tone, theme, and reflection question."
+    },
+    {
+      "id": "gratitude-002",
+      "text": "Who is someone I often take for granted? What's one thing they did for me recently?",
+      "category": "gratitude",
+      "subcategory": "relationships",
+      "difficulty": "moderate",
+      "technique": "Relational gratitude",
+      "description": "We adapt to people in our lives and stop appreciating them. This prompt fights 'hedonic adaptation'.",
+      "tags": ["gratitude", "relationships", "appreciation"],
+      "relatedPrompts": ["gratitude-010", "gratitude-020"],
+      "aiSuggestion": "After writing, click Get insights for an on-device emotional tone, theme, and reflection question."
+    },
+    {
+      "id": "gratitude-003",
+      "text": "What's one challenge I'm facing that's actually teaching me something valuable?",
+      "category": "gratitude",
+      "subcategory": "adversity",
+      "difficulty": "deep",
+      "technique": "Post-traumatic growth",
+      "description": "Finding meaning in difficulty is the most powerful form of gratitude. This doesn't minimize pain - it honors growth.",
+      "tags": ["gratitude", "growth", "resilience", "meaning"],
+      "relatedPrompts": ["gratitude-025", "self-discovery-015"],
+      "aiSuggestion": "After writing, click Get insights for an on-device emotional tone, theme, and reflection question."
+    },
+    {
+      "id": "self-discovery-001",
+      "text": "When do I feel most like myself? What am I usually doing?",
+      "category": "self-discovery",
+      "subcategory": "authenticity",
+      "difficulty": "moderate",
+      "technique": "Values clarification",
+      "description": "Your most authentic moments reveal your core values. This prompt helps you identify them.",
+      "tags": ["self-discovery", "authenticity", "values", "purpose"],
+      "relatedPrompts": ["self-discovery-002", "self-discovery-010"],
+      "aiSuggestion": "After writing, click Get insights for an on-device emotional tone, theme, and reflection question."
+    },
+    {
+      "id": "self-discovery-002",
+      "text": "What do I believe about myself that might not actually be true?",
+      "category": "self-discovery",
+      "subcategory": "limiting-beliefs",
+      "difficulty": "deep",
+      "technique": "Belief examination",
+      "description": "We carry childhood stories about ourselves that no longer serve us. This prompt helps you question them.",
+      "tags": ["self-discovery", "beliefs", "identity", "cbt"],
+      "relatedPrompts": ["self-discovery-003", "anxiety-004"],
+      "aiSuggestion": "After writing, click Get insights for an on-device emotional tone, theme, and reflection question."
+    },
+    {
+      "id": "self-discovery-003",
+      "text": "If money and others' opinions didn't matter, what would I do with my life?",
+      "category": "self-discovery",
+      "subcategory": "life-purpose",
+      "difficulty": "deep",
+      "technique": "Ideal life visioning",
+      "description": "Removing constraints helps you see your true desires. Most people have never honestly asked themselves this.",
+      "tags": ["self-discovery", "purpose", "goals", "dreams"],
+      "relatedPrompts": ["self-discovery-015", "self-discovery-020"],
+      "aiSuggestion": "After writing, click Get insights for an on-device emotional tone, theme, and reflection question."
+    },
+    {
+      "id": "anxiety-006",
+      "text": "What's one thing I can control in this situation? What's outside my control?",
+      "category": "anxiety",
+      "subcategory": "control",
+      "difficulty": "moderate",
+      "technique": "Circle of control",
+      "description": "Anxiety increases when we try to control the uncontrollable. This prompt helps you redirect energy.",
+      "tags": ["anxiety", "control", "stoicism", "action"],
+      "relatedPrompts": ["anxiety-007", "anxiety-008"],
+      "aiSuggestion": "After writing, click Get insights for an on-device emotional tone, theme, and reflection question."
+    },
+    {
+      "id": "anxiety-007",
+      "text": "What's my anxiety trying to protect me from? Is this protection helpful right now?",
+      "category": "anxiety",
+      "subcategory": "anxiety-function",
+      "difficulty": "deep",
+      "technique": "Emotion function analysis",
+      "description": "Anxiety evolved to keep us safe. Understanding its 'intention' helps you work with it, not against it.",
+      "tags": ["anxiety", "emotion-regulation", "evolutionary-psychology"],
+      "relatedPrompts": ["anxiety-008", "self-discovery-010"],
+      "aiSuggestion": "After writing, click Get insights for an on-device emotional tone, theme, and reflection question."
+    },
+    {
+      "id": "gratitude-004",
+      "text": "What's something I use every day that I've stopped noticing?",
+      "category": "gratitude",
+      "subcategory": "everyday",
+      "difficulty": "easy",
+      "technique": "Novelty gratitude",
+      "description": "We adapt to conveniences so fast we forget they're there. This prompt fights habituation.",
+      "tags": ["gratitude", "mindfulness", "awareness"],
+      "relatedPrompts": ["gratitude-005", "gratitude-006"],
+      "aiSuggestion": "After writing, click Get insights for an on-device emotional tone, theme, and reflection question."
+    },
+    {
+      "id": "gratitude-005",
+      "text": "What's a mistake I made that taught me something important?",
+      "category": "gratitude",
+      "subcategory": "growth",
+      "difficulty": "moderate",
+      "technique": "Failure reframing",
+      "description": "Gratitude for mistakes is advanced practice. It transforms regret into wisdom.",
+      "tags": ["gratitude", "growth-mindset", "resilience"],
+      "relatedPrompts": ["gratitude-003", "self-discovery-008"],
+      "aiSuggestion": "After writing, click Get insights for an on-device emotional tone, theme, and reflection question."
+    },
+    {
+      "id": "self-discovery-004",
+      "text": "What compliment do I have trouble accepting? Why might that be?",
+      "category": "self-discovery",
+      "subcategory": "self-worth",
+      "difficulty": "deep",
+      "technique": "Worthiness work",
+      "description": "The compliments we reject reveal our deepest insecurities. This prompt brings them to light.",
+      "tags": ["self-discovery", "self-worth", "shadow-work"],
+      "relatedPrompts": ["self-discovery-005", "self-discovery-012"],
+      "aiSuggestion": "After writing, click Get insights for an on-device emotional tone, theme, and reflection question."
+    },
+    {
+      "id": "self-discovery-005",
+      "text": "What would 10-year-old me think of who I am today?",
+      "category": "self-discovery",
+      "subcategory": "inner-child",
+      "difficulty": "deep",
+      "technique": "Inner child dialogue",
+      "description": "Your childhood self had dreams unburdened by 'realism'. This prompt reconnects you with that innocence.",
+      "tags": ["self-discovery", "inner-child", "nostalgia", "healing"],
+      "relatedPrompts": ["self-discovery-006", "self-discovery-025"],
+      "aiSuggestion": "After writing, click Get insights for an on-device emotional tone, theme, and reflection question."
+    },
+    {
+      "id": "anxiety-008",
+      "text": "What's the smallest step I can take right now to feel 1% better?",
+      "category": "anxiety",
+      "subcategory": "coping",
+      "difficulty": "easy",
+      "technique": "Micro-actions",
+      "description": "Anxiety paralyzes. This prompt gets you moving, even if it's just sipping water or stepping outside.",
+      "tags": ["anxiety", "action", "coping", "behavioral-activation"],
+      "relatedPrompts": ["anxiety-009", "anxiety-020"],
+      "aiSuggestion": "After writing, click Get insights for an on-device emotional tone, theme, and reflection question."
+    },
+    {
+      "id": "anxiety-009",
+      "text": "What are three things I can see, hear, and feel right now? (5-4-3-2-1 grounding)",
+      "category": "anxiety",
+      "subcategory": "grounding",
+      "difficulty": "easy",
+      "technique": "Sensory grounding",
+      "description": "The 5-4-3-2-1 technique interrupts panic by anchoring you in the present moment through your senses.",
+      "tags": ["anxiety", "grounding", "mindfulness", "panic-attacks"],
+      "relatedPrompts": ["anxiety-001", "anxiety-010"],
+      "aiSuggestion": "After writing, click Get insights for an on-device emotional tone, theme, and reflection question."
+    },
+    {
+      "id": "anxiety-010",
+      "text": "When was the last time I felt calm? What was different about that moment?",
+      "category": "anxiety",
+      "subcategory": "calm-states",
+      "difficulty": "easy",
+      "technique": "Solution-focused",
+      "description": "Instead of fixating on anxiety, this prompt helps you reverse-engineer your calm moments.",
+      "tags": ["anxiety", "calm", "solution-focused"],
+      "relatedPrompts": ["anxiety-008", "gratitude-010"],
+      "aiSuggestion": "After writing, click Get insights for an on-device emotional tone, theme, and reflection question."
+    }
+  ],
+  "promptsByDifficulty": {
+    "easy": 8,
+    "moderate": 6,
+    "deep": 6
+  }
+}
