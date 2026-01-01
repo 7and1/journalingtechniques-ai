@@ -1,7 +1,6 @@
 import { ImageResponse } from 'next/og';
 import { getCategory } from '@/lib/prompts';
 
-export const runtime = 'edge';
 export const alt = 'Journal Prompts';
 export const size = {
   width: 1200,

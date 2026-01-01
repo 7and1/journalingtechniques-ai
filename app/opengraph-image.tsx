@@ -1,6 +1,5 @@
 import { ImageResponse } from 'next/og';
 
-export const runtime = 'edge';
 export const alt =
   'Private AI Journaling - Your Journal Text Never Leaves Your Browser';
 export const size = {
