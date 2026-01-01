@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:cf": "npx opennextjs-cloudflare",
+    "build:cf": "npx opennextjs-cloudflare build",
     "preview:cf": "npm run build:cf && npx wrangler pages dev",
     "deploy:cf": "npm run build:cf && npx wrangler pages deploy .open-next/assets --project-name=journalingtechniques-ai",
     "start": "next start",
