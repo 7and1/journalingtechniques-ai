@@ -46,8 +46,6 @@ wrangler.toml
 # Misc
 .turbo
 
-# Lock files
-package-lock.json
 
 # Development docs (keep private)
 AI_*.md
