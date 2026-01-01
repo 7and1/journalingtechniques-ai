@@ -1,13 +1,10 @@
-# Cloudflare Pages Configuration Template
+# Cloudflare Pages Configuration Template (OpenNext)
 # Copy this file to wrangler.toml and fill in your values
 # IMPORTANT: wrangler.toml is in .gitignore - NEVER commit it!
 
 name = "journalingtechniques-ai"
 compatibility_date = "2024-12-01"
 compatibility_flags = ["nodejs_compat"]
-
-# Pages project configuration
-pages_build_output_dir = ".vercel/output/static"
 
 # Environment variables (non-sensitive only)
 # Sensitive values should be set via Cloudflare Dashboard or GitHub Secrets

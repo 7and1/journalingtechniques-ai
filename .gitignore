@@ -42,6 +42,7 @@ yarn-error.log*
 # Cloudflare
 wrangler.toml
 .wrangler
+.open-next
 
 # Misc
 .turbo

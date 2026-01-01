@@ -35,7 +35,7 @@ jobs:
         run: npm test
 
       - name: Build for Cloudflare Pages
-        run: npx @cloudflare/next-on-pages
+        run: npx opennextjs-cloudflare
         env:
           NODE_ENV: production
 
@@ -44,4 +44,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy .vercel/output/static --project-name=journalingtechniques-ai
+          command: pages deploy .open-next --project-name=journalingtechniques-ai
