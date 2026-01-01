@@ -10,12 +10,12 @@ export const size = {
 export const contentType = 'image/png';
 
 interface Props {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ category: string }>;
 }
 
 export default async function Image({ params }: Props) {
-  const { slug } = await params;
-  const category = getCategory(slug);
+  const { category: categorySlug } = await params;
+  const category = getCategory(categorySlug);
 
   if (!category) {
     return new ImageResponse(

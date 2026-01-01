@@ -9,19 +9,19 @@ import {
 } from '@/lib/prompts';
 
 interface PromptCategoryPageProps {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ category: string }>;
 }
 
 export function generateStaticParams() {
   const categories = getPromptCategories();
-  return categories.map((category) => ({ slug: category.slug }));
+  return categories.map((cat) => ({ category: cat.slug }));
 }
 
 export async function generateMetadata({
   params,
 }: PromptCategoryPageProps): Promise<Metadata> {
-  const { slug } = await params;
-  const category = getCategory(slug);
+  const { category: categorySlug } = await params;
+  const category = getCategory(categorySlug);
   if (!category) {
     return {};
   }
@@ -34,7 +34,7 @@ export async function generateMetadata({
     description,
     keywords: category.seo?.keywords,
     alternates: {
-      canonical: `/prompts/${slug}`,
+      canonical: `/prompts/${categorySlug}`,
     },
     openGraph: {
       title:
@@ -43,10 +43,10 @@ export async function generateMetadata({
       description:
         category.seo?.description ??
         `Curated journal prompts focused on ${category.name.toLowerCase()} and emotional processing.`,
-      url: `https://journalingtechniques.ai/prompts/${slug}`,
+      url: `https://journalingtechniques.ai/prompts/${categorySlug}`,
       images: [
         {
-          url: `https://journalingtechniques.ai/prompts/${slug}/opengraph-image`,
+          url: `https://journalingtechniques.ai/prompts/${categorySlug}/opengraph-image`,
           width: 1200,
           height: 630,
           alt: title,
@@ -58,7 +58,7 @@ export async function generateMetadata({
       title,
       description,
       images: [
-        `https://journalingtechniques.ai/prompts/${slug}/opengraph-image`,
+        `https://journalingtechniques.ai/prompts/${categorySlug}/opengraph-image`,
       ],
     },
   };
@@ -67,12 +67,12 @@ export async function generateMetadata({
 export default async function PromptCategoryPage({
   params,
 }: PromptCategoryPageProps) {
-  const { slug } = await params;
-  const category = getCategory(slug);
+  const { category: categorySlug } = await params;
+  const category = getCategory(categorySlug);
   if (!category) return notFound();
-  const prompts = getPromptsByCategory(slug);
+  const prompts = getPromptsByCategory(categorySlug);
   const related = getPromptCategories()
-    .filter((item) => item.slug !== slug)
+    .filter((item) => item.slug !== categorySlug)
     .slice(0, 3);
 
   const itemListJsonLd = {
@@ -88,7 +88,7 @@ export default async function PromptCategoryPage({
         '@type': 'CreativeWork',
         name: prompt.text,
         description: prompt.description,
-        url: `https://journalingtechniques.ai/prompts/${slug}/${prompt.id}`,
+        url: `https://journalingtechniques.ai/prompts/${categorySlug}/${prompt.id}`,
       },
     })),
   };
