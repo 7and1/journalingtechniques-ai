@@ -7,6 +7,8 @@ import {
 } from '@/lib/prompts';
 import { getAllGuidesMeta } from '@/lib/guides';
 
+export const dynamic = 'force-static';
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://journalingtechniques.ai';
   const promptsLastUpdated = getPromptsLastUpdated() ?? new Date();

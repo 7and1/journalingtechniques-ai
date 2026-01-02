@@ -8,6 +8,7 @@ import {
   getAllPrompts,
 } from '@/lib/prompts';
 import { BookmarkButton } from '@/components/marketing/BookmarkButton';
+import { CopyButton } from '@/components/ui/CopyButton';
 
 interface Props {
   params: Promise<{ category: string; promptId: string }>;
@@ -228,15 +229,10 @@ export default async function PromptDetailPage({ params }: Props) {
           >
             Try with AI →
           </Link>
-          <button
-            type="button"
-            onClick={() => {
-              navigator.clipboard.writeText(prompt.text);
-            }}
+          <CopyButton
+            text={prompt.text}
             className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-400 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-200 dark:hover:border-slate-600 dark:hover:bg-slate-900"
-          >
-            Copy prompt
-          </button>
+          />
         </div>
 
         {prompt.aiSuggestion && (

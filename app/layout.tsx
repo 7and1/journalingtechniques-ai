@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     siteName: 'journalingtechniques.ai',
     images: [
       {
-        url: '/opengraph-image',
+        url: '/og-image.svg',
         width: 1200,
         height: 630,
         alt: 'Private AI Journaling — Your Journal Text Never Leaves Your Browser',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: 'journalingtechniques.ai — Private AI Journaling',
     description:
       'Client-side AI insights for journalers who refuse to compromise on privacy.',
-    images: ['/opengraph-image'],
+    images: ['/og-image.svg'],
   },
 };
 

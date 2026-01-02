@@ -39,7 +39,7 @@ export async function generateMetadata({
       url: `https://journalingtechniques.ai/guides/${slug}`,
       images: [
         {
-          url: `https://journalingtechniques.ai/guides/${slug}/opengraph-image`,
+          url: 'https://journalingtechniques.ai/og-image.svg',
           width: 1200,
           height: 630,
           alt: title,
@@ -50,9 +50,7 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title,
       description: guide.description,
-      images: [
-        `https://journalingtechniques.ai/guides/${slug}/opengraph-image`,
-      ],
+      images: ['https://journalingtechniques.ai/og-image.svg'],
     },
   };
 }
@@ -83,7 +81,7 @@ export default async function GuidePage({ params }: GuidePageProps) {
       '@type': 'WebPage',
       '@id': `https://journalingtechniques.ai/guides/${slug}`,
     },
-    image: [`https://journalingtechniques.ai/guides/${slug}/opengraph-image`],
+    image: ['https://journalingtechniques.ai/og-image.svg'],
     keywords: guide.seo?.keywords?.join(', '),
   };
 
@@ -133,9 +131,10 @@ export default async function GuidePage({ params }: GuidePageProps) {
       <div className="mt-8 flex items-center justify-between border-t border-slate-200 pt-8 dark:border-slate-800">
         <ReadingProgressButton slug={guide.slug} />
       </div>
-      <article className="prose prose-lg prose-slate mt-10 max-w-none dark:prose-invert prose-headings:font-semibold prose-h2:mt-12 prose-h2:text-3xl prose-h3:mt-10 prose-h3:text-2xl prose-p:mt-4 prose-p:leading-relaxed prose-a:font-semibold prose-a:text-brand prose-a:no-underline hover:prose-a:text-brand-dark hover:prose-a:underline prose-blockquote:border-l-4 prose-blockquote:border-brand/40 prose-blockquote:bg-brand/5 prose-blockquote:italic dark:prose-blockquote:bg-brand/10">
-        {guide.content}
-      </article>
+      <article
+        className="prose prose-lg prose-slate mt-10 max-w-none dark:prose-invert prose-headings:font-semibold prose-h2:mt-12 prose-h2:text-3xl prose-h3:mt-10 prose-h3:text-2xl prose-p:mt-4 prose-p:leading-relaxed prose-a:font-semibold prose-a:text-brand prose-a:no-underline hover:prose-a:text-brand-dark hover:prose-a:underline prose-blockquote:border-l-4 prose-blockquote:border-brand/40 prose-blockquote:bg-brand/5 prose-blockquote:italic dark:prose-blockquote:bg-brand/10"
+        dangerouslySetInnerHTML={{ __html: guide.contentHtml }}
+      />
       <div className="mt-12 rounded-3xl border border-brand/20 bg-brand/5 p-6 text-center dark:bg-brand/10">
         <p className="text-lg font-semibold text-slate-900 dark:text-slate-50">
           Ready to put this guide into practice?

@@ -1,7 +1,8 @@
 import path from 'node:path';
 import { promises as fs } from 'node:fs';
-import { compileMDX } from 'next-mdx-remote/rsc';
-import type { ReactElement } from 'react';
+import matter from 'gray-matter';
+import { remark } from 'remark';
+import remarkHtml from 'remark-html';
 
 const GUIDES_PATH = path.join(process.cwd(), 'content/guides');
 
@@ -26,25 +27,37 @@ export interface GuideMeta extends GuideFrontmatter {
 }
 
 export interface GuideContent extends GuideMeta {
-  content: ReactElement;
+  contentHtml: string;
 }
 
 export async function getGuideSlugs() {
   const files = await fs.readdir(GUIDES_PATH);
   return files
-    .filter((file) => file.endsWith('.mdx'))
-    .map((file) => file.replace(/\.mdx$/, ''));
+    .filter((file) => file.endsWith('.mdx') || file.endsWith('.md'))
+    .map((file) => file.replace(/\.(mdx?|md)$/, ''));
 }
 
 export async function getGuideMeta(slug: string): Promise<GuideMeta | null> {
-  const filePath = path.join(GUIDES_PATH, `${slug}.mdx`);
+  const mdxPath = path.join(GUIDES_PATH, `${slug}.mdx`);
+  const mdPath = path.join(GUIDES_PATH, `${slug}.md`);
+
+  let filePath = mdxPath;
+  try {
+    await fs.access(mdxPath);
+  } catch {
+    try {
+      await fs.access(mdPath);
+      filePath = mdPath;
+    } catch {
+      console.error(`[guides] File not found for ${slug}`);
+      return null;
+    }
+  }
+
   try {
     const source = await fs.readFile(filePath, 'utf-8');
-    const { frontmatter } = await compileMDX<GuideFrontmatter>({
-      source,
-      options: { parseFrontmatter: true },
-    });
-    return { slug, ...(frontmatter as GuideFrontmatter) };
+    const { data } = matter(source);
+    return { slug, ...(data as GuideFrontmatter) };
   } catch (error) {
     console.error(`[guides] Failed to load meta for ${slug}`, error);
     return null;
@@ -66,21 +79,37 @@ export async function getAllGuidesMeta(): Promise<GuideMeta[]> {
 export async function getGuideContent(
   slug: string
 ): Promise<GuideContent | null> {
-  const filePath = path.join(GUIDES_PATH, `${slug}.mdx`);
+  const mdxPath = path.join(GUIDES_PATH, `${slug}.mdx`);
+  const mdPath = path.join(GUIDES_PATH, `${slug}.md`);
+
+  let filePath = mdxPath;
+  try {
+    await fs.access(mdxPath);
+  } catch {
+    try {
+      await fs.access(mdPath);
+      filePath = mdPath;
+    } catch {
+      console.error(`[guides] File not found for ${slug}`);
+      return null;
+    }
+  }
+
   try {
     const source = await fs.readFile(filePath, 'utf-8');
-    const { content, frontmatter } = await compileMDX<GuideFrontmatter>({
-      source,
-      options: { parseFrontmatter: true },
-    });
+    const { data, content } = matter(source);
 
-    const readingTime = frontmatter.readingTime || calculateReadingTime(source);
+    const processedContent = await remark().use(remarkHtml).process(content);
+    const contentHtml = processedContent.toString();
+
+    const readingTime =
+      (data as GuideFrontmatter).readingTime || calculateReadingTime(content);
 
     return {
       slug,
-      ...(frontmatter as GuideFrontmatter),
+      ...(data as GuideFrontmatter),
       readingTime,
-      content,
+      contentHtml,
     };
   } catch (error) {
     console.error(`[guides] Failed to compile guide ${slug}`, error);
